@@ -1,6 +1,6 @@
 ﻿  lab4.cpp
+D:\универ\5 sem\OSISP\OSISP\lab4\lab4\lab4.cpp(237,35): warning C4244: инициализация: преобразование "LRESULT" в "int", возможна потеря данных
+D:\универ\5 sem\OSISP\OSISP\lab4\lab4\lab4.cpp(238,35): warning C4244: инициализация: преобразование "LRESULT" в "int", возможна потеря данных
 D:\универ\5 sem\OSISP\OSISP\lab4\lab4\lab4.cpp(239,35): warning C4244: инициализация: преобразование "LRESULT" в "int", возможна потеря данных
-D:\универ\5 sem\OSISP\OSISP\lab4\lab4\lab4.cpp(240,35): warning C4244: инициализация: преобразование "LRESULT" в "int", возможна потеря данных
-D:\универ\5 sem\OSISP\OSISP\lab4\lab4\lab4.cpp(241,35): warning C4244: инициализация: преобразование "LRESULT" в "int", возможна потеря данных
-D:\универ\5 sem\OSISP\OSISP\lab4\lab4\lab4.cpp(302): warning C4715: WndProc: значение возвращается не при всех путях выполнения
+D:\универ\5 sem\OSISP\OSISP\lab4\lab4\lab4.cpp(300): warning C4715: WndProc: значение возвращается не при всех путях выполнения
   lab4.vcxproj -> D:\универ\5 sem\OSISP\OSISP\lab4\lab4\x64\Debug\lab4.exe

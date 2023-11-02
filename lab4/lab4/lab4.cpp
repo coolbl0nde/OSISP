@@ -4,6 +4,11 @@
 #include "framework.h"
 #include "lab4.h"
 
+#include <vector>
+#include <thread>
+
+#include <cmath> // для std::sin
+
 #define MAX_LOADSTRING 100
 
 // Глобальные переменные:
@@ -25,16 +30,9 @@ BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
-#include <vector>
-#include <thread>
-
-std::vector<std::thread> threads;
-
 int result1 = 0;
 int result2 = 0;
 int result3 = 0;
-
-#include <cmath> // для std::sin
 
 void processData(int threadPriority, int* result)
 {
@@ -48,11 +46,11 @@ void processData(int threadPriority, int* result)
     }
 
     if (result == &result1)
-        PostMessage(GetParent(hResultLabel1), WM_USER + 1, (WPARAM)&result1, (LPARAM)hResultLabel1);
+        PostMessage(GetParent(hResultLabel1), WM_USER, (WPARAM)&result1, (LPARAM)hResultLabel1);
     else if (result == &result2)
-        PostMessage(GetParent(hResultLabel2), WM_USER + 1, (WPARAM)&result2, (LPARAM)hResultLabel2);
+        PostMessage(GetParent(hResultLabel2), WM_USER, (WPARAM)&result2, (LPARAM)hResultLabel2);
     else
-        PostMessage(GetParent(hResultLabel3), WM_USER + 1, (WPARAM)&result3, (LPARAM)hResultLabel3);
+        PostMessage(GetParent(hResultLabel3), WM_USER, (WPARAM)&result3, (LPARAM)hResultLabel3);
 }
 
 void SetResultLabel(HWND label, int value)
@@ -172,7 +170,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
     case WM_CREATE:
     {
-        // Создать кнопки "Start" и "Stop"
+        // Создать кнопки "Start"
         CreateWindow(L"BUTTON", L"Start", WS_TABSTOP | WS_VISIBLE | WS_CHILD,
             10, 10, 100, 30, hWnd, (HMENU)IDC_START_BUTTON, hInst, NULL);
 
@@ -212,7 +210,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
     }
     break;
-    case WM_USER + 1:
+    case WM_USER:
     {
         int* pResult = (int*)wParam;
         HWND hResultLabel = (HWND)lParam;

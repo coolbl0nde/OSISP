@@ -56,7 +56,7 @@ void CopyFileAsync() {
         std::wstring status = std::to_wstring((int)(progress * 100)) + L"% (" + std::to_wstring(copiedBytes / (1024 * 1024)) + L" MB)";
         UpdateProgress(progress, status);
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Simulate slower copying for demonstration
+        std::this_thread::sleep_for(std::chrono::milliseconds(1)); 
     }
 
     source.close();
